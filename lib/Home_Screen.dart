@@ -26,29 +26,84 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
+        child: Column(children: [
+          const UserAccountsDrawerHeader(
+            accountName: Text(
+              'David Guetta',
+              style: TextStyle(color: Colors.black),
             ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                // Drawer içindeki öğeye tıklama işlemleri
-              },
+            accountEmail: Text('+91-999999999',
+                style: TextStyle(color: Color.fromARGB(255, 94, 90, 90))),
+            currentAccountPicture: CircleAvatar(
+              foregroundImage: AssetImage("assets/david.png"),
             ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // Drawer içindeki öğeye tıklama işlemleri
-              },
-            ),
-          ],
-        ),
+            decoration:
+                BoxDecoration(color: Color.fromARGB(255, 223, 220, 220)),
+          ),
+          ListTile(
+            leading: Icon(Icons.shop_2_sharp),
+            title: const Text('Shop by Categories'),
+            onTap: () {
+              // Drawer içindeki öğeye tıklama işlemleri
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.favorite),
+            title: const Text('Favourites'),
+            onTap: () {
+              // Drawer içindeki öğeye tıklama işlemleri
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.timeline_sharp),
+            title: const Text('FAQs'),
+            onTap: () {
+              // Drawer içindeki öğeye tıklama işlemleri
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.add_moderator_rounded),
+            title: const Text('Addresses'),
+            onTap: () {
+              // Drawer içindeki öğeye tıklama işlemleri
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.save_alt_outlined),
+            title: const Text('Saved Cards'),
+            onTap: () {
+              // Drawer içindeki öğeye tıklama işlemleri
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.terminal_rounded),
+            title: const Text('Terms & Conditions'),
+            onTap: () {
+              // Drawer içindeki öğeye tıklama işlemleri
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.privacy_tip),
+            title: const Text('Privacy Policy'),
+            onTap: () {
+              // Drawer içindeki öğeye tıklama işlemleri
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.logout),
+            title: const Text('Logout'),
+            onTap: () {
+              // Drawer içindeki öğeye tıklama işlemleri
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.timeline_sharp),
+            title: const Text('My Orders'),
+            onTap: () {
+              // Drawer içindeki öğeye tıklama işlemleri
+            },
+          ),
+        ]),
       ),
       body: Column(
         children: [
@@ -126,29 +181,85 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(height: 20),
-          Stack(
-            children: [
-              Container(
-                width: 360,
-                height: 154,
-                decoration: BoxDecoration(color: Color(0xFFFFE0B7)),
-              ),
-              Positioned(
-                top: 50, // Text'in yüksekliğini ayarlayabilirsiniz
-                left: 20, // Text'in sol boşluğunu ayarlayabilirsiniz
-                child: Text(
-                  'MIN 15%',
-                  style: TextStyle(
-                    color: Color(0xFF3E1304),
-                    fontSize: 24,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w700,
-                    height: 0.05,
-                    letterSpacing: 2.88,
+          Container(
+            width: 360,
+            height: 154,
+            child: Stack(
+              children: [
+                Positioned(
+                  left: 0,
+                  top: 0,
+                  child: Container(
+                    width: 360,
+                    height: 154,
+                    decoration: BoxDecoration(color: Color(0xFFFFE0B7)),
                   ),
                 ),
-              ),
-            ],
+                Positioned(
+                  left: 16,
+                  top: 31,
+                  child: Container(
+                    width: 148,
+                    height: 92,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: SizedBox(
+                            width: 148,
+                            child: Text(
+                              'MIN 15% OFF',
+                              style: TextStyle(
+                                color: Color(0xFF3E1304),
+                                fontSize: 24,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w700,
+                                height: 1.2, // Yükseklik ayarı düzenlendi
+                                letterSpacing: 2.88,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 0,
+                          top: 70,
+                          child: Container(
+                            width: 70,
+                            height: 22,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 6),
+                            decoration: ShapeDecoration(
+                              color: Color(0xFFCC6522),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(2)),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'SHOP NOW',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 8,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.2, // Yükseklik ayarı düzenlendi
+                                    letterSpacing: 1.20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),
