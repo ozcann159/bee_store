@@ -60,6 +60,13 @@ flutter:
   assets:
     - assets/notification.png
     - assets/bag-2.png
+    - assets/Vector1.png
+    - assets/Vector.png
+    - assets/frame.png
+    - assets/frame1.png
+    - assets/frame2.png
+    - assets/Vector4.png
+    - assets/banner.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
