@@ -162,105 +162,58 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: [
                 for (int i = 0; i < 7; i++)
-                  Padding(
-                    padding: EdgeInsets.all(5.0),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          getImagePath(i),
-                          height: 65,
-                        ),
-                        Text(
-                          getTextContent(i),
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
-                    ),
+                  Column(
+                    children: [
+                      Image.asset(
+                        getImagePath(i),
+                        height: 65,
+                      ),
+                      Text(
+                        getTextContent(i),
+                        style: TextStyle(fontSize: 12),
+                      ),
+                    ],
                   ),
               ],
             ),
           ),
           SizedBox(height: 20),
-          Container(
-            width: 360,
-            height: 154,
-            child: Stack(
-              children: [
-                Positioned(
-                  left: 0,
-                  top: 0,
-                  child: Container(
-                    width: 360,
-                    height: 154,
-                    decoration: BoxDecoration(color: Color(0xFFFFE0B7)),
-                  ),
-                ),
-                Positioned(
-                  left: 16,
-                  top: 31,
-                  child: Container(
-                    width: 148,
-                    height: 92,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          top: 0,
-                          child: SizedBox(
-                            width: 148,
-                            child: Text(
-                              'MIN 15% OFF',
-                              style: TextStyle(
-                                color: Color(0xFF3E1304),
-                                fontSize: 24,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w700,
-                                height: 1.2, // Yükseklik ayarı düzenlendi
-                                letterSpacing: 2.88,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 0,
-                          top: 70,
-                          child: Container(
-                            width: 70,
-                            height: 22,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 6),
-                            decoration: ShapeDecoration(
-                              color: Color(0xFFCC6522),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(2)),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'SHOP NOW',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 8,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w700,
-                                    height: 1.2, // Yükseklik ayarı düzenlendi
-                                    letterSpacing: 1.20,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.only(right: 10),
+                  padding: EdgeInsets.only(left: 10),
+                  width: MediaQuery.of(context).size.width / 2.0,
+                  height: MediaQuery.of(context).size.height / 5.5,
+                  decoration: BoxDecoration(color: Color(0xFFFFE0B7)),
+                  child: Center(
+                    child: Text(
+                      'MIN 15% ',
+                      style: TextStyle(
+                        color: Color(0xFF3E1304),
+                        fontSize: 24,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        height: 0.05,
+                        letterSpacing: 2.88,
+                      ),
                     ),
+                    
                   ),
                 ),
-              ],
-            ),
-          )
+              ),
+              Expanded(
+                child: Image.asset(
+                  'assets/ayakkabi.png',
+                  width: MediaQuery.of(context).size.width / 4.3,
+                  height: MediaQuery.of(context).size.height / 5.5,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
